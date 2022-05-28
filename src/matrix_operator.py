@@ -26,6 +26,9 @@ class MatrixOperator:
     def apply_translation_2d(self, vector_2: Vector2, translation_vector: Vector2) -> Vector2:
         return self.__translation_operator.get_translation_2d(vector_2, translation_vector)
 
+    def apply_translation_3d(self, vector_3: Vector3, translation_vector: Vector3) -> Vector3:
+        return self.__translation_operator.get_translation_3d(vector_3, translation_vector)
+
     def apply_rotation_2d(self, vector_2: Vector2, degree: float) -> Vector2:
         return self.__rotation_operator.get_rotation_2d(vector_2, degree)
 

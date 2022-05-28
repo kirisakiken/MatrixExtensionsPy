@@ -11,8 +11,8 @@ if __name__ == '__main__':
     matrix_operator = MatrixOperator()
 
     point = Vector3(2, 3, 1)
-    scale = Vector3(2, 21, 0)
-    result = matrix_operator.apply_scale_3d(point, scale)
+    translation = Vector3(-2, -21, 10)
+    result = matrix_operator.apply_translation_3d(point, translation)
 
     print(result.x)
     print(result.y)
