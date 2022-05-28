@@ -35,3 +35,6 @@ class MatrixOperator:
 
     def apply_scale_2d(self, vector_2: Vector2, scale_vector: Vector2) -> Vector2:
         return self.scale_operator.get_scale_2d(vector_2, scale_vector)
+
+    def apply_scale_3d(self, vector_3: Vector3, scale_vector: Vector3) -> Vector3:
+        return self.scale_operator.get_scale_3d(vector_3, scale_vector)

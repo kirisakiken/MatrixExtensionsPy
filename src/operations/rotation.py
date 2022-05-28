@@ -44,7 +44,7 @@ class RotationOperator:
         result = np.matmul(rotation_matrix, vector_2_matrix)
         return Vector2(result[0][0], result[1][0])
 
-    def get_rotation_3d(self, vector_3: Vector3, rotation_vector_3: Vector3):
+    def get_rotation_3d(self, vector_3: Vector3, rotation_vector_3: Vector3) -> Vector3:
         rotation_matrix_x = self.get_rotation_matrix_3d(rotation_vector_3.x, AXIS.X)
         rotation_matrix_y = self.get_rotation_matrix_3d(rotation_vector_3.y, AXIS.Y)
         rotation_matrix_z = self.get_rotation_matrix_3d(rotation_vector_3.z, AXIS.Z)
