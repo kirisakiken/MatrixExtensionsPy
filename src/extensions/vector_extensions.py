@@ -9,19 +9,26 @@ class VectorExtensions:
         pass
 
     @staticmethod
-    def vector2_to_matrix_1x2(vec_2d: Vector2):
-        return np.array([[vec_2d.x],
-                         [vec_2d.y]])
+    def vector2_to_matrix_1x2(vector_2: Vector2):
+        return np.array([[vector_2.x],
+                         [vector_2.y]])
 
     @staticmethod
-    def vector2_to_matrix_1x3(vec_2d: Vector2):
-        return np.array([[vec_2d.x],
-                         [vec_2d.y],
+    def vector2_to_matrix_1x3(vector_2: Vector2):
+        return np.array([[vector_2.x],
+                         [vector_2.y],
                          [1]])
 
     @staticmethod
-    def vector3_to_matrix_1x4(vector_3d: Vector3):
-        return np.array([[vector_3d.x],
-                         [vector_3d.y],
-                         [vector_3d.z],
+    def vector3_to_matrix_1x3(vector_3: Vector3):
+        return np.array([[vector_3.x],
+                         [vector_3.y],
+                         [vector_3.z],
+                         [1]])
+
+    @staticmethod
+    def vector3_to_matrix_1x4(vector_3: Vector3):
+        return np.array([[vector_3.x],
+                         [vector_3.y],
+                         [vector_3.z],
                          [1]])
