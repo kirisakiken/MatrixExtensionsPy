@@ -1,4 +1,5 @@
 from src.types.axis import (
+    AXIS,
     Axis2,
     Axis3,
 )
@@ -28,6 +29,9 @@ class MatrixOperator:
 
     def apply_rotation_2d(self, vector_2: Vector2, degree: float) -> Vector2:
         return self.rotation_operator.get_rotation_2d(vector_2, degree)
+
+    def apply_rotation_3d(self, vector_3: Vector3, rotation_vector_3: Vector3) -> Vector3:
+        return self.rotation_operator.get_rotation_3d(vector_3, rotation_vector_3)
 
     def apply_scale_2d(self, vector_2: Vector2, scale_vector: Vector2) -> Vector2:
         return self.scale_operator.get_scale_2d(vector_2, scale_vector)

@@ -1,5 +1,13 @@
+from enum import Enum
+
 from src.types.vector2 import Vector2
 from src.types.vector3 import Vector3
+
+
+class AXIS(Enum):
+    X = 1,
+    Y = 2,
+    Z = 3,
 
 
 class Axis2:

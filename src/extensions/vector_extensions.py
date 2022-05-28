@@ -20,7 +20,8 @@ class VectorExtensions:
                          [1]])
 
     @staticmethod
-    def vector3_to_matrix_1x3(vector_3d: Vector3):
+    def vector3_to_matrix_1x4(vector_3d: Vector3):
         return np.array([[vector_3d.x],
                          [vector_3d.y],
-                         [vector_3d.z]])
+                         [vector_3d.z],
+                         [1]])
