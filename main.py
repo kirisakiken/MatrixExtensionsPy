@@ -10,9 +10,9 @@ from src.types.vector3 import Vector3
 if __name__ == '__main__':
     matrix_operator = MatrixOperator()
 
-    point = Vector3(2, 3, 1)
-    translation = Vector3(-2, -21, 10)
-    result = matrix_operator.apply_translation_3d(point, translation)
+    point = Vector3(5, 10, 1)
+    tr = Vector3(2, 2, 4)
+    result = matrix_operator.apply_scale(point, tr)
 
     print(result.x)
     print(result.y)
