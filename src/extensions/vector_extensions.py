@@ -50,7 +50,7 @@ class VectorExtensions:
                             "Vector2) or (Vector3 and Vector3)")
 
     @staticmethod
-    def get_lerp(a: Vector2 | Vector3, b: Vector2 | Vector3) -> Vector3:
+    def get_lerp(a: Vector2 | Vector3, b: Vector2 | Vector3) -> Vector2 | Vector3:
         raise NotImplementedError("VectorExtensions.get_lerp not implemented")
 
     @staticmethod
