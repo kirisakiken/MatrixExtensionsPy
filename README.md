@@ -38,4 +38,5 @@ file.
 ### TODO:
 - add unit tests
 - add ci/cd
+- add docker
 - add documentation
