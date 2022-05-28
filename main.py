@@ -7,8 +7,8 @@ if __name__ == '__main__':
     matrix_operator = MatrixExtensions()
 
     position = Vector2(3, 4)
-    deg = 45
-    result = matrix_operator.apply_rotation_2d(position, deg)
+    scale_vector = Vector2(2, 2)
+    result = matrix_operator.apply_scale_2d(position, scale_vector)
 
     print(result.x)
     print(result.y)

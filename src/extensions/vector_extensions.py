@@ -8,7 +8,12 @@ class VectorExtensions:
         pass
 
     @staticmethod
-    def vector2_to_matrix3x3(vec_2d: Vector2):
+    def vector2_to_matrix_1x3(vec_2d: Vector2):
         return np.array([[vec_2d.x],
                          [vec_2d.y],
                          [1]])
+
+    @staticmethod
+    def vector2_to_matrix_1x2(vec_2d: Vector2):
+        return np.array([[vec_2d.x],
+                         [vec_2d.y]])
