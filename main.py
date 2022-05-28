@@ -1,3 +1,4 @@
+from src.extensions.vector_extensions import VectorExtensions
 from src.matrix_operator import MatrixOperator
 from src.types.axis import (
     AXIS,
@@ -10,12 +11,9 @@ from src.types.vector3 import Vector3
 if __name__ == '__main__':
     matrix_operator = MatrixOperator()
 
-    point = Vector3(5, 10, 1)
-    tr = Vector3(2, 2, 4)
-    result = matrix_operator.apply_scale(point, tr)
-
-    print(result.x)
-    print(result.y)
-    print(result.z)
+    v1 = Vector3(1, 11.2, 0)
+    v2 = Vector3(2, -5, 0)
+    res = VectorExtensions.get_cross_product(v1, v2)
+    print(res)
 
     print("Fin")
