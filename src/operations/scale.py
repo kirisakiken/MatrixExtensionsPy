@@ -14,7 +14,7 @@ class ScaleOperator:
         return np.array([[vector_2.x, 0],
                          [0, vector_2.y]])
 
-    def get_scale_2d(self, vector_2: Vector2, scale_vector_2: Vector2):
+    def get_scale_2d(self, vector_2: Vector2, scale_vector_2: Vector2) -> Vector2:
         scale_matrix = self.get_scale_matrix_2d(scale_vector_2)
         vector_2_matrix = VectorExtensions.vector2_to_matrix_1x2(vector_2)
         result = np.matmul(scale_matrix, vector_2_matrix)

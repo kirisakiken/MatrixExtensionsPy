@@ -16,7 +16,7 @@ class TransformationOperator:
         return AxisExtensions.axis2_to_matrix_2x2(transformation_axis)
 
     # linear transformation
-    def get_transformation_2d(self, vector_2: Vector2, transformation_axis: Axis2):
+    def get_transformation_2d(self, vector_2: Vector2, transformation_axis: Axis2) -> Vector2:
         position_matrix = VectorExtensions.vector2_to_matrix_1x2(vector_2)
         transformation_matrix = self.get_transformation_matrix_2d(transformation_axis)
         result = np.matmul(transformation_matrix, position_matrix)
