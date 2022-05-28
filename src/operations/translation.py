@@ -10,12 +10,12 @@ class TranslationOperator:
         pass
 
     @staticmethod
-    def get_translation_matrix_2d(translation_matrix_2d: Vector2):
+    def get_translation_matrix_2d(translation_vector_2d: Vector2):
         arr = np.identity(3)
-        arr[0:2, 2] = [translation_matrix_2d.x, translation_matrix_2d.y]
+        arr[0:2, 2] = [translation_vector_2d.x, translation_vector_2d.y]
         return arr
 
-    def get_translation_2d(self, vector_2: Vector2, translation_vector: Vector2):
+    def get_translation_2d(self, vector_2: Vector2, translation_vector: Vector2) -> Vector2:
         translation_matrix = self.get_translation_matrix_2d(translation_vector)
         position_matrix = VectorExtensions.vector2_to_matrix3x3(vector_2)
         result = np.matmul(translation_matrix, position_matrix)

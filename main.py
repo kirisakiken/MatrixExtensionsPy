@@ -7,11 +7,10 @@ if __name__ == '__main__':
     matrix_operator = MatrixExtensions()
 
     position = Vector2(3, 4)
-    translation_vector = Vector2(1, 1)
-    translation = matrix_operator.apply_translation_2d(position, translation_vector)
+    deg = 45
+    result = matrix_operator.apply_rotation_2d(position, deg)
 
-    print(translation.x)
-    print(translation.y)
+    print(result.x)
+    print(result.y)
 
     print("Fin")
-
