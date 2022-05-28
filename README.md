@@ -24,6 +24,12 @@ file.
 
 ---
 
+### Usage
+- Use `MatrixOperator` for 2D/3D operations [src/matrix_operator.py](https://github.com/kirisakiken/matrix-operations-py/blob/master/src/matrix_operator.py)
+- Use `VectorExtensions` for other vector operations [src/extensions/vector_extensions.py](https://github.com/kirisakiken/matrix-operations-py/blob/master/src/extensions/vector_extensions.py)
+
+---
+
 ### Dependencies;
 - numpy 1.22.4
 
@@ -32,3 +38,4 @@ file.
 ### TODO:
 - add unit tests
 - add ci/cd
+- add documentation
