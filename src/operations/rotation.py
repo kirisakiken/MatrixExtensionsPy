@@ -12,8 +12,9 @@ class RotationOperator:
 
     @staticmethod
     def get_rotation_matrix_2d(degree):
-        return np.array([[math.cos(degree), -math.sin(degree)],
-                         [math.sin(degree), math.cos(degree)]])
+        rad = math.radians(degree)
+        return np.array([[math.cos(rad), -math.sin(rad)],
+                         [math.sin(rad), math.cos(rad)]])
 
     def get_rotation_2d(self, vector_2: Vector2, degree: float) -> Vector2:
         rotation_matrix = self.get_rotation_matrix_2d(degree)
