@@ -3,7 +3,7 @@ import math
 
 """
 Represents a linear function that can be described as
-ax + by = c
+ax + by = c in 2D Space
 """
 
 

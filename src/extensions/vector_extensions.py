@@ -2,6 +2,7 @@ import math
 import numpy as np
 
 from src.types.line2 import Line2
+from src.types.line3 import Line3
 from src.types.vector2 import Vector2
 from src.types.vector3 import Vector3
 
@@ -62,8 +63,14 @@ class VectorExtensions:
                             "Vector2) or (Vector3 and Vector3)")
 
     @staticmethod
-    def get_perpendicular_distance_2d(vector: Vector2, line: Line2) -> float:
-        return abs((vector.x * line.a) + (vector.y * line.b) + line.c) / line.get_magnitude()
+    def get_perpendicular_distance(vector: Vector2 | Vector3, line: Line2 | Line3) -> float:
+        if type(vector) == Vector2 and type(line) == Line2:
+            return abs((vector.x * line.a) + (vector.y * line.b) + line.c) / line.get_magnitude()
+        elif type(vector) == Vector3 and type(line) == Line3:
+            return abs((vector.x * line.a) + (vector.y * line.b) + (vector.z * line.c) + line.d) / line.get_magnitude()
+        else:
+            raise TypeError("Invalid argument types for method get_perpendicular_distance. Expected types: (Vector2 "
+                            "and Line2) or (Vector3 and Line3)")
 
     @staticmethod
     def vector2_to_matrix_1x2(vector_2: Vector2):

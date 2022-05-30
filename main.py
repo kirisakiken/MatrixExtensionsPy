@@ -8,14 +8,14 @@ from src.types.axis import (
 from src.types.vector2 import Vector2
 from src.types.vector3 import Vector3
 from src.types.line2 import Line2
+from src.types.line3 import Line3
 
 if __name__ == '__main__':
     matrix_operator = MatrixOperator()
 
-    v1 = Vector2(0, 0)
-    v2 = Vector2(11, 11)
-    res = VectorExtensions.get_lerp(v1, v2, 0.1, True)
-    print(res.x)
-    print(res.y)
+    v1 = Vector3(1, 2, 0)
+    l2 = Line3(1, -1, 2)
+    res = VectorExtensions.get_perpendicular_distance(v1, l2)
+    print(res)
 
     print("Fin")
