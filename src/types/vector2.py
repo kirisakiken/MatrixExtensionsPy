@@ -23,5 +23,3 @@ class Vector2:
             return Vector2.zero()
 
         return Vector2(self.x / v_len, self.y / v_len)
-
-

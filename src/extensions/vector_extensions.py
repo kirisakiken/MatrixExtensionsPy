@@ -1,6 +1,7 @@
 import math
 import numpy as np
 
+from src.types.line2 import Line2
 from src.types.vector2 import Vector2
 from src.types.vector3 import Vector3
 
@@ -52,6 +53,10 @@ class VectorExtensions:
     @staticmethod
     def get_lerp(a: Vector2 | Vector3, b: Vector2 | Vector3) -> Vector2 | Vector3:
         raise NotImplementedError("VectorExtensions.get_lerp not implemented")
+
+    @staticmethod
+    def get_perpendicular_distance_2d(vector: Vector2, line: Line2) -> float:
+        return abs((vector.x * line.a) + (vector.y * line.b) + line.c) / line.get_magnitude()
 
     @staticmethod
     def vector2_to_matrix_1x2(vector_2: Vector2):
