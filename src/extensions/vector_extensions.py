@@ -28,7 +28,7 @@ class VectorExtensions:
                             "Vector2) or (Vector3 and Vector3)")
 
     @staticmethod
-    def get_cross_product(a: Vector2 | Vector3, b: Vector2| Vector3) -> float:
+    def get_cross_product(a: Vector2 | Vector3, b: Vector2 | Vector3) -> float:
         if type(a) == Vector2 and type(b) == Vector2:
             return np.linalg.det(np.array([[a.x, a.y],
                                            [b.x, b.y]]))
