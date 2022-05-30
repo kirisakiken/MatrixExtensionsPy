@@ -12,9 +12,10 @@ from src.types.line2 import Line2
 if __name__ == '__main__':
     matrix_operator = MatrixOperator()
 
-    v1 = Vector2(1, 2)
-    l2 = Line2(1, -1, 2)
-    res = VectorExtensions.get_perpendicular_distance_2d(v1, l2)
-    print(res)
+    v1 = Vector2(0, 0)
+    v2 = Vector2(11, 11)
+    res = VectorExtensions.get_lerp(v1, v2, 0.1, True)
+    print(res.x)
+    print(res.y)
 
     print("Fin")

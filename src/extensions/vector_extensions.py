@@ -34,8 +34,8 @@ class VectorExtensions:
                                            [b.x, b.y]]))
         elif type(a) == Vector3 and type(b) == Vector3:
             return np.linalg.det(np.array([[1, 1, 1],
-                                          [a.x, a.y, a.z],
-                                          [b.x, b.y, b.z]]))
+                                           [a.x, a.y, a.z],
+                                           [b.x, b.y, b.z]]))
         else:
             raise TypeError("Invalid argument types for method get_dot_product. Expected types: (Vector2 and "
                             "Vector2) or (Vector3 and Vector3)")
@@ -51,8 +51,15 @@ class VectorExtensions:
                             "Vector2) or (Vector3 and Vector3)")
 
     @staticmethod
-    def get_lerp(a: Vector2 | Vector3, b: Vector2 | Vector3) -> Vector2 | Vector3:
-        raise NotImplementedError("VectorExtensions.get_lerp not implemented")
+    def get_lerp(a: Vector2 | Vector3, b: Vector2 | Vector3, t: float, unclamped: bool = False) -> Vector2 | Vector3:
+        t_value = max(min(t, 1), 0) if not unclamped else t
+        if type(a) == Vector2 and type(b) == Vector2:
+            return Vector2(a.x + (b.x - a.x) * t_value, a.y + (b.y - a.y) * t_value)
+        elif type(a) == Vector3 and type(b) == Vector3:
+            return Vector3((a.x + (b.x - a.x)) * t_value, (a.y + (b.y - a.y)) * t_value, (a.z + (b.z - a.z)) * t_value)
+        else:
+            raise TypeError("Invalid argument types for method get_lerp. Expected types: (Vector2 and "
+                            "Vector2) or (Vector3 and Vector3)")
 
     @staticmethod
     def get_perpendicular_distance_2d(vector: Vector2, line: Line2) -> float:
