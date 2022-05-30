@@ -26,4 +26,3 @@ class Line2:
             return Line2.zero()
 
         return Line2(self.a / v_len, self.b / v_len, 0)
-
