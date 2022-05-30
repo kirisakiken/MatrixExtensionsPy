@@ -16,6 +16,7 @@ file.
 3. [ ] `Vector4 -- [x, y, z, w]`
 4. [ ] `Quaternion -- [x, y, z, w]`
 5. [x] `Line2 -- ax + by = c`
+6. [x] `Line3 -- ax + by + cz = d`
 
 ### Supported Operations;
 1. [x] `Transform in 2D/3D`
