@@ -19,7 +19,7 @@ file.
 6. [x] `Line3 -- ax + by + cz = d`
 
 ### Supported Operations;
-1. [x] `Transform in 2D/3D`
+1. [x] `Linear Transformation in 2D/3D`
 2. [x] `Translation in 2D/3D`
 3. [x] `Rotation in 2D/3D`
 4. [x] `Scale in 2D/3D`
