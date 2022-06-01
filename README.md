@@ -37,8 +37,7 @@ file.
 
 ---
 
-### TODO:
-- add unit tests
+### TODO
 - add ci/cd
-- add docker
+- pip release
 - add documentation
