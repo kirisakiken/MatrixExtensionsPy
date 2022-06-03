@@ -12,7 +12,7 @@ class VectorExtensions:
         pass
 
     @staticmethod
-    def get_dot_product(a: Vector2 | Vector3, b: Vector2 | Vector3) -> float:
+    def get_dot_product(a: Vector2 or Vector3, b: Vector2 or Vector3) -> float:
         if type(a) == Vector2 and type(b) == Vector2:
             v_1_matrix = np.array([[a.x, a.y]])
             v_2_matrix = np.array([[b.x],
@@ -29,7 +29,7 @@ class VectorExtensions:
                             "Vector2) or (Vector3 and Vector3)")
 
     @staticmethod
-    def get_cross_product(a: Vector2 | Vector3, b: Vector2 | Vector3) -> float:
+    def get_cross_product(a: Vector2 or Vector3, b: Vector2 or Vector3) -> float:
         if type(a) == Vector2 and type(b) == Vector2:
             return np.linalg.det(np.array([[a.x, a.y],
                                            [b.x, b.y]]))
@@ -42,7 +42,7 @@ class VectorExtensions:
                             "Vector2) or (Vector3 and Vector3)")
 
     @staticmethod
-    def get_distance(a: Vector2 | Vector3, b: Vector2 | Vector3) -> float:
+    def get_distance(a: Vector2 or Vector3, b: Vector2 or Vector3) -> float:
         if type(a) == Vector2 and type(b) == Vector2:
             return math.sqrt(((a.x - b.x) ** 2) + ((a.y - b.y) ** 2))
         elif type(a) == Vector3 and type(b) == Vector3:
@@ -52,7 +52,7 @@ class VectorExtensions:
                             "Vector2) or (Vector3 and Vector3)")
 
     @staticmethod
-    def get_lerp(a: Vector2 | Vector3, b: Vector2 | Vector3, t: float, unclamped: bool = False) -> Vector2 | Vector3:
+    def get_lerp(a: Vector2 or Vector3, b: Vector2 or Vector3, t: float, unclamped: bool = False) -> Vector2 or Vector3:
         t_value = max(min(t, 1), 0) if not unclamped else t
         if type(a) == Vector2 and type(b) == Vector2:
             return Vector2(a.x + (b.x - a.x) * t_value, a.y + (b.y - a.y) * t_value)
@@ -63,7 +63,7 @@ class VectorExtensions:
                             "Vector2) or (Vector3 and Vector3)")
 
     @staticmethod
-    def get_perpendicular_distance(vector: Vector2 | Vector3, line: Line2 | Line3) -> float:
+    def get_perpendicular_distance(vector: Vector2 or Vector3, line: Line2 or Line3) -> float:
         if type(vector) == Vector2 and type(line) == Line2:
             return abs((vector.x * line.a) + (vector.y * line.b) + line.c) / line.get_magnitude()
         elif type(vector) == Vector3 and type(line) == Line3:
