@@ -20,4 +20,3 @@ class AxisExtensions:
         return np.array([[axis_3.x_axis.x, axis_3.y_axis.x, axis_3.z_axis.x],
                          [axis_3.x_axis.y, axis_3.y_axis.y, axis_3.z_axis.y],
                          [axis_3.x_axis.z, axis_3.y_axis.z, axis_3.z_axis.z]])
-
