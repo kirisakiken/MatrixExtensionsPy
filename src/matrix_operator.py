@@ -18,7 +18,11 @@ class MatrixOperator:
         self.__scale_operator = ScaleOperator()
 
     # Applies 2D/3D linear transformation to a Vector2/Vector3
-    def apply_linear_transformation(self, vector: Vector2 | Vector3, transformation_axis: Axis2 | Axis3) -> Vector2 | Vector3:
+    def apply_linear_transformation(
+            self,
+            vector: Vector2 or Vector3,
+            transformation_axis: Axis2 or Axis3,
+    ) -> Vector2 or Vector3:
         if type(vector) == Vector2 and type(transformation_axis) == Axis2:
             return self.__transformation_operator.get_transformation_2d(vector, transformation_axis)
         elif type(vector) == Vector3 and type(transformation_axis) == Axis3:
@@ -28,7 +32,11 @@ class MatrixOperator:
                             "Axis2) or (Vector3 and Axis3)")
 
     # Applies 2D/3D translation to a Vector2/Vector3
-    def apply_translation(self, vector: Vector2 | Vector3, translation_vector: Vector2 | Vector3) -> Vector2 | Vector3:
+    def apply_translation(
+            self,
+            vector: Vector2 or Vector3,
+            translation_vector: Vector2 or Vector3,
+    ) -> Vector2 or Vector3:
         if type(vector) == Vector2 and type(translation_vector) == Vector2:
             return self.__translation_operator.get_translation_2d(vector, translation_vector)
         elif type(vector) == Vector3 and type(translation_vector) == Vector3:
@@ -38,7 +46,11 @@ class MatrixOperator:
                             "Vector2) or (Vector3 and Vector3)")
 
     # Applies rotation to a Vector2/Vector3
-    def apply_rotation(self, vector: Vector2 | Vector3, rotation_vector: int | float | Vector3) -> Vector2 | Vector3:
+    def apply_rotation(
+            self,
+            vector: Vector2 or Vector3,
+            rotation_vector: int or float or Vector3,
+    ) -> Vector2 or Vector3:
         if type(vector) == Vector2 and (type(rotation_vector) == int or type(rotation_vector) == float):
             return self.__rotation_operator.get_rotation_2d(vector, rotation_vector)
         elif type(vector) == Vector3 and type(rotation_vector) == Vector3:
@@ -48,7 +60,7 @@ class MatrixOperator:
                             "int/float) or (Vector3 and Vector3)")
 
     # Applies 2D/3D scale to a Vector2/Vector3
-    def apply_scale(self, vector: Vector2 | Vector3, scale_vector: Vector2 | Vector3) -> Vector2 | Vector3:
+    def apply_scale(self, vector: Vector2 or Vector3, scale_vector: Vector2 or Vector3) -> Vector2 or Vector3:
         if type(vector) == Vector2 and type(scale_vector) == Vector2:
             return self.__scale_operator.get_scale_2d(vector, scale_vector)
         elif type(vector) == Vector3 and type(scale_vector) == Vector3:
