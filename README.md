@@ -24,25 +24,67 @@ file.
 3. [x] `Rotation in 2D/3D`
 4. [x] `Scale in 2D/3D`
 
+
+
+## [Library Documentation](https://github.com/kirisakiken/matrix-operations-py/.docs/MatrixOperator.md)
+
 ---
 
 ### Usage
+
+Import following files into your project,
 - Use `MatrixOperator` for 2D/3D operations [src/matrix_operator.py](https://github.com/kirisakiken/matrix-operations-py/blob/master/src/matrix_operator.py)
 - Use `VectorExtensions` for other vector operations [src/extensions/vector_extensions.py](https://github.com/kirisakiken/matrix-operations-py/blob/master/src/extensions/vector_extensions.py)
 
 ---
 
-### Dependencies;
+### Project Dependencies;
 - numpy 1.22.4
 
 ---
 
-### Dev Dependencies
+## Contribution Guide
+
+### Development Dependencies
+
 - flake8 4.0.1
 - pytest 7.1.2
+- [+Project Dependencies](https://github.com/kirisakiken/matrix-operations-py#dependencies)
+
+---
+
+### 1. Setup Development environment
+
+- Create venv/conda environment (recommended) ~ Python 3.8, 3.9, 3.10
+- Activate venv/conda environment
+- Install project/development dependencies by;
+  1. `pip install -r requirements.txt`
+  2. `pip install -r dev_requirements.txt`
+
+### 2. Introducing code changes
+
+- Create new branch using latest master
+- Introduce your code . . .
+
+
+### 3. Linting/Testing code changes
+
+- Add unit tests for the code
+- Lint your code with;
+  1. `flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics`
+  2. `flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics`
+- Test your code by executing: `pytest`
+- Commit and push changes
+
+
+### 4. Open pull request
+
+- Open pull request using your branch
+- Target to master
+- Add description explaining features/fixes that you've introduced.
+- And good to go! ☺
 
 ---
 
 ### TODO
 - cd package release
-- add documentation
