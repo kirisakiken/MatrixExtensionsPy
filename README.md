@@ -45,7 +45,7 @@ Import following files into your project,
 
 ## Contribution Guide
 
-To become a contributor, please your `github username` to `bezmican96@gmail.com`.
+To become a contributor, please send your `github username` and name of this repository to `bezmican96@gmail.com`.
 
 ### Development Dependencies
 
