@@ -26,7 +26,7 @@ file.
 
 
 
-## [Library Documentation](https://github.com/kirisakiken/matrix-operations-py/.docs/MatrixOperator.md)
+## [Library Documentation](https://github.com/kirisakiken/matrix-operations-py/blob/master/.docs/MatrixOperator.md#matrix-operator)
 
 ---
 
