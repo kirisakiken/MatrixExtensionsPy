@@ -67,3 +67,5 @@ in 2D/3D space and returns a new vector.
 in 2D/3D space and returns a new vector.
 
 **Example** : `scaled_vector = matrix_operator().apply_scale(vector, vector)`
+
+---
