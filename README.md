@@ -37,7 +37,12 @@ file.
 
 ---
 
+### Dev Dependencies
+- flake8 4.0.1
+- pytest 7.1.2
+
+---
+
 ### TODO
-- add ci/cd
-- pip release
+- cd package release
 - add documentation
