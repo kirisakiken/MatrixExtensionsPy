@@ -76,6 +76,7 @@ To become a contributor, please send your `github username` and name of this rep
   1. `flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics`
   2. `flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics`
 - Test your code by executing: `pytest`
+- Test your code coverage by executing `pytest --cov=src/ --cov-fail-under=90 && rm .coverage`
 - Commit and push changes
 
 
