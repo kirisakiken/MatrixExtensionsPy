@@ -13,8 +13,8 @@ file.
 ### Supported Types;
 1. [x] `Vector2 -- [x, y]`
 2. [x] `Vector3 -- [x, y, z]`
-3. [ ] `Vector4 -- [x, y, z, w]`
-4. [ ] `Quaternion -- [x, y, z, w]`
+3. [x] `Vector4 -- [x, y, z, w]`
+4. [x] `Quaternion -- [x, y, z, w]`
 5. [x] `Line2 -- ax + by = c`
 6. [x] `Line3 -- ax + by + cz = d`
 
@@ -90,4 +90,5 @@ To become a contributor, please send your `github username` and name of this rep
 ---
 
 ### TODO
+- add quaternion support in operations
 - cd package release
