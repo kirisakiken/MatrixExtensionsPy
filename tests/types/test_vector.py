@@ -2,6 +2,7 @@ import unittest
 
 from src.types.vector2 import Vector2
 from src.types.vector3 import Vector3
+from src.types.vector4 import Vector4
 
 
 class TestVector2(unittest.TestCase):
@@ -216,5 +217,115 @@ class TestVector3(unittest.TestCase):
         vector_8 = Vector3(2, 1, 1)
         result_4 = vector_7 != vector_8
         self.assertEqual(result_4, True)
+
+    # endregion
+
+
+class TestVector4(unittest.TestCase):
+    # Tests for Vector4
+    def test_instantiate_vector4(self):
+        x, y, z, w = 3.1152, 0.25, -6, 21.1
+
+        vector = Vector4(x, y, z, w)
+
+        self.assertEqual(x, vector.x)
+        self.assertEqual(y, vector.y)
+        self.assertEqual(z, vector.z)
+        self.assertEqual(w, vector.w)
+
+    def test_get_zero(self):
+        vector = Vector4.zero()
+
+        self.assertEqual(vector.x, 0)
+        self.assertEqual(vector.y, 0)
+        self.assertEqual(vector.z, 0)
+        self.assertEqual(vector.w, 0)
+
+    def test_get_one(self):
+        vector = Vector4.one()
+
+        self.assertEqual(vector.x, 1)
+        self.assertEqual(vector.y, 1)
+        self.assertEqual(vector.z, 1)
+        self.assertEqual(vector.w, 1)
+
+    def test_get_magnitude(self):
+        vector_1 = Vector4(3, 4, 5, 2.11)
+        vector_2 = Vector4(3, -4, 5, -2.11)
+        magnitude_1 = vector_1.get_magnitude()
+        magnitude_2 = vector_2.get_magnitude()
+
+        self.assertAlmostEqual(magnitude_1, 7.38, 2)
+        self.assertAlmostEqual(magnitude_2, 7.38, 2)
+
+    def test_get_normalized(self):
+        vector_1 = Vector4(5, -7, 1.12, -3.41)
+        vector_2 = Vector4.zero()
+        normalized_1 = vector_1.get_normalized()
+        normalized_2 = vector_2.get_normalized()
+
+        self.assertAlmostEqual(normalized_1.x, 0.536, 3)
+        self.assertAlmostEqual(normalized_1.y, -0.751, 3)
+        self.assertAlmostEqual(normalized_1.z, 0.120, 3)
+        self.assertAlmostEqual(normalized_1.w, -0.366, 3)
+
+        self.assertEqual(normalized_2.x, 0)
+        self.assertEqual(normalized_2.y, 0)
+        self.assertEqual(normalized_2.z, 0)
+        self.assertEqual(normalized_2.w, 0)
+
+    # region Operator Tests
+
+    def test_add(self):
+        vector_1 = Vector4(1.5, -6.1, 2.5, 1)
+        vector_2 = Vector4(-12.53, 4, -2.5, -1)
+
+        result = vector_1 + vector_2
+        self.assertAlmostEqual(result.x, -11.03, 2)
+        self.assertAlmostEqual(result.y, -2.1, 2)
+        self.assertAlmostEqual(result.z, 0, 2)
+        self.assertAlmostEqual(result.w, 0, 2)
+
+    def test_subtract(self):
+        vector_1 = Vector4(4, -2, 5, 2)
+        vector_2 = Vector4(-12, 1, 1, -7)
+
+        result = vector_1 - vector_2
+        self.assertEqual(result.x, 16)
+        self.assertEqual(result.y, -3)
+        self.assertEqual(result.z, 4)
+        self.assertEqual(result.w, 9)
+
+    def test_multiply(self):
+        vector_1 = Vector4(2.5, -2, 2, 10)
+        vector_2 = Vector4(4, 1, -3, 2)
+
+        result = vector_1 * vector_2
+        self.assertEqual(result.x, 10)
+        self.assertEqual(result.y, -2)
+        self.assertEqual(result.z, -6)
+        self.assertEqual(result.w, 20)
+
+    def test_equal(self):
+        vector_1 = Vector4(3.22, 1, 2, 1.15)
+        vector_2 = Vector4(3.22, 1, 2, 1.15)
+        result_1 = vector_1 == vector_2
+        self.assertEqual(result_1, True)
+
+        vector_3 = Vector4(-2, 0, 1, 2)
+        vector_4 = Vector4(-2, 0, 1, 2.14)
+        result_2 = vector_3 == vector_4
+        self.assertEqual(result_2, False)
+
+    def test_not_equal(self):
+        vector_1 = Vector4(3.22, 1, 2, -5.325)
+        vector_2 = Vector4(3.22, 1, 2, -5.325)
+        result_1 = vector_1 != vector_2
+        self.assertEqual(result_1, False)
+
+        vector_3 = Vector4(1, 1, 1, 1)
+        vector_4 = Vector4(1, 1, 1, 2.15)
+        result_2 = vector_3 != vector_4
+        self.assertEqual(result_2, True)
 
     # endregion
