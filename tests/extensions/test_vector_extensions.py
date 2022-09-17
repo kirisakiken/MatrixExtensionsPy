@@ -70,11 +70,12 @@ class TestVectorExtensions(unittest.TestCase):
         self.assertEqual(cross, -15)
 
     def test_get_cross_product_3d(self):
-        a = Vector3(1, 2.2, -1)
-        b = Vector3(5.2, 4, 1.1)
+        expected = Vector3(-9, -15, 13)
+        a = Vector3(1, 2, 3)
+        b = Vector3(-4, 5, 3)
 
         cross = VectorExtensions.get_cross_product(a, b)
-        self.assertAlmostEqual(cross, -7.32, 2)
+        self.assertEqual(cross, expected)
 
     def test_get_cross_product_fail(self):
         a = Vector2(1, 5)

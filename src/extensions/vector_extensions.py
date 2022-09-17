@@ -29,14 +29,15 @@ class VectorExtensions:
                             "Vector2) or (Vector3 and Vector3)")
 
     @staticmethod
-    def get_cross_product(a: Vector2 or Vector3, b: Vector2 or Vector3) -> float:
+    def get_cross_product(a: Vector2 or Vector3, b: Vector2 or Vector3) -> float or Vector3:
         if type(a) == Vector2 and type(b) == Vector2:
-            return np.linalg.det(np.array([[a.x, a.y],
-                                           [b.x, b.y]]))
+            return (a.x * b.y) - (a.y * b.x)
         elif type(a) == Vector3 and type(b) == Vector3:
-            return np.linalg.det(np.array([[1, 1, 1],
-                                           [a.x, a.y, a.z],
-                                           [b.x, b.y, b.z]]))
+            return Vector3(
+                (a.y * b.z) - (a.z * b.y),
+                (a.z * b.x) - (a.x * b.z),
+                (a.x * b.y) - (a.y * b.x),
+            )
         else:
             raise TypeError("Invalid argument types for method get_dot_product. Expected types: (Vector2 and "
                             "Vector2) or (Vector3 and Vector3)")
